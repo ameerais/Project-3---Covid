@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Vaccination Data Viewer</title>
+    <!-- Include Chart.js -->
+     <!-- Website for the charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>COVID-19 Vaccination Data</h1>
+
+    <!-- Creating a dropdown to select a country to view the data and graph -->
+    <label for="countryDropdown">Select a Country:</label>
+    <select id="countryDropdown">
+        <option value="Argentina">Argentina</option>
+        <option value="Austria">Austria</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Chile">Chile</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Czechia">Czechia</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Finland">Finland</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Ireland">Ireland</option>
+        <option value="Italy">Italy</option>
+        <option value="Latvia">Latvia</option>
+        <option value="Liechtenstein">Liechtenstein</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Luxembourg">Luxembourg</option>
+        <option value="Malta">Malta</option>
+        <option value="Netherlands">Netherlands</option>
+        <option value="Norway">Norway</option>
+        <option value="Poland">Poland</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Romania">Romania</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Spain">Spain</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="United States">United States</option>
+        
+    </select>
+     <!-- Button to select the country -->
+    <button id="getCountryData">Get Country Data</button>
+    
+    <!-- Display the country data as requested by the user-->
+    <h2>Country Data</h2>
+    <pre id="countryData">Country data will be shown here.</pre>
+
+    <!-- Chart view on the page -->
+    <h2>Covis-19 New Cases in 2021</h2>
+    <canvas id="casesChart" width="70" height="30"></canvas>
+
+    <script>
+        // Function to fetch country data and update chart as requested
+        document.getElementById('getCountryData').addEventListener('click', function () {
+            let country = document.getElementById('countryDropdown').value;
+            if (country) {
+                fetch(`/country?country=${country}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('countryData').innerText = JSON.stringify(data, null, 2);
+
+                        // Preparing the data for the chart
+                        const months = [];
+                        const newCases = [];
+                         // First entry is what is requested
+                        for (let key in data) {
+                            const monthData = data[key][0]; 
+                            months.push(`Month ${monthData.month}`);
+                            newCases.push(monthData.new_cases);
+                        }
+
+                        // Function to update the chart
+                        updateChart(months, newCases);
+                    })
+                    .catch(error => {
+                        document.getElementById('countryData').innerText = "Error fetching country data.";
+                    });
+            } else {
+                document.getElementById('countryData').innerText = "Please select a country.";
+            }
+        });
+
+        // Function to create or update the chart
+        let chartInstance;
+        function updateChart(months, newCases) {
+            const ctx = document.getElementById('casesChart').getContext('2d');
+            
+            // If a chart already exists remove the old one before creating a new one
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+            // Bar chart creation and specifications
+            chartInstance = new Chart(ctx, {
+                type: 'bar', 
+                data: {
+                    // Labels for the months
+                    labels: months, 
+                    datasets: [{
+                        label: 'New Cases',
+                        // Data for the new cases
+                        data: newCases, 
+                        // Orange background colour for the graph
+                        backgroundColor: 'rgba(255, 165, 0, 0.2)', 
+                        // Black border for the graph
+                        borderColor: 'rgba(0, 0, 0, 1)', 
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
