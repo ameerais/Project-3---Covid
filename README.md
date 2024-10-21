@@ -30,26 +30,26 @@ Ethical Considerations:
 This project considers ethical data usage and ensures that personal information is not included in the analysis. All data is anonymized, and only aggregated statistics about conditions and deaths are analyzed. Additionally, the project acknowledges that correlations between conditions and deaths do not imply causation, and care is taken in interpreting the results.
 
 # Correlation Between Cases and Healthcare Systems
-Overview
+Overview:
 This data analysis focused on the correlation between COVID-19 cases and various healthcare system factors across different countries. The goal is to explore how healthcare infrastructure, public health policies, and socioeconomic conditions have influenced the spread and impact of COVID-19.
 
-Contents
+Contents:
 Data: Datasets related to COVID-19 cases, healthcare spending, testing rates, vaccination rates, and socioeconomic indicators.
 Analysis: Analysis code and visualizations.
 Results: Summary of findings and correlations observed from the analysis.
 References: Sources of data and literature relevant to the analysis.
 
-Analysis Workflow
+Analysis Workflow:
 Data Preparation: Import datasets and clean the data for analysis.
 Exploratory Data Analysis (EDA): Visualize trends and correlations between COVID-19 cases and healthcare metrics.
 Statistical Analysis: Conduct correlation analyses to determine relationships.
 Results Interpretation: Summarize key findings and their implications.
 
-Key Findings
-Countries with strong healthcare infrastructure exhibited better management of COVID-19 cases.
-Early testing and tracing efforts significantly reduced transmission rates.
-Higher healthcare spending correlated with lower case fatality rates.
-Vaccination rates played a crucial role in decreasing severe cases.
+Key Findings:
+- Countries with strong healthcare infrastructure exhibited better management of COVID-19 cases.
+- Early testing and tracing efforts significantly reduced transmission rates.
+- Higher healthcare spending correlated with lower case fatality rates.
+- Vaccination rates played a crucial role in decreasing severe cases.
 
 # COVID-19 Vaccination Type Data Analysis & Visualization Project
 Overview- For this part of the project we have focused on analyzing and visualizing data related to COVID-19 cases, vaccinations, and deaths across various countries in 2021. 
