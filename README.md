@@ -1,4 +1,4 @@
-COVID-19 Vaccination Data Analysis & Visualization Project
+# COVID-19 Vaccination Type Data Analysis & Visualization Project
 Overview- For this part of the project we have focused on analyzing and visualizing data related to COVID-19 cases, vaccinations, and deaths across various countries in 2021. 
 This analysis is aimed at answering some common questions regarding the relationship between vaccination status and the number of COVID-19 cases, as well as examining which types of vaccines were most commonly used.
 
