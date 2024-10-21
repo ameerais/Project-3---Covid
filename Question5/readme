@@ -1,0 +1,25 @@
+In this part we are going to tackle the following question:
+'Is there a relationship between racial and ethnic groups with the number of COVID-19 Cases? 
+
+In order to answer the following question we chose a dataset called "COVID-19_Cases_and_Deaths_by_Race_Ethnicity_-_ARCHIVE.csv"
+
+
+
+The first step, we loaded the dataset into a Pandas DataFrame. 
+Before any analysis, we cleaned the columns names to avoid any errors when referring to specific columns later. 
+Next, we dropped rows with missing values to have useful information 
+We also filled missing values with 0 since the missing value implies that no cases or deaths were recorded for that group. 
+We ensured the correct data types are being used which is integers in order to perform statistical analysis correctly. 
+We then connected to SQLite Database, and verified that the data is in the database by querying the first 5 rows.
+Because the data is in SQL, we ran a query to aggregate the total cases by race/ethnicity group. We got the total cases in descending order here. 
+Before plotting charts, we make sure we are only working with rows where values are not missing - race/ethnicity and total cases and that the data type is correct. 
+First, we plotted a bar chart of total cases to visualize. We found that NH White has the highest number of total cases. 
+We then calculated descriptive statistics for cases by race/ethnicity
+To make a fair comparison across different population sizes of different racial/ethnic groups, we calculated the case rate per 100,000 people - this helps us normalize the data. We represented that by doing a bar chart per 100k of COVID-19 case rates. The results were different here, and we can see that the Hispanic group.
+
+This means that now we have two bar charts - one that shows the total number of cases by race/ethnicity and another showing the case rate per 100,000 people. This makes it easier to compare the impact. 
+
+We additionally created a scatter plot between the total cases and total deaths to visually represent the relationship between both variables. 
+
+Lastly, to answer our question we did a correlation analysis to see if there is a relationship between case rates and deaths. The correlation between case_rates_per_100k to total deaths is 0.076 indicating a weak positive correlation suggesting that there is little to no linear relationship between these two. 
+However, when doing the correlation between the total cases and total death we get a value of 0.714 indicating a strong positive correlation. This means as the number of cases increases, the total number of deaths also tends to increase. Other factors like healthcase access, age distrbution, pre-existing conditions play a role which explains why the correlation is not perfect.
