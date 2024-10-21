@@ -103,7 +103,7 @@ Before any analysis, we cleaned the columns names to avoid any errors when refer
 Next, we dropped rows with missing values to have useful information 
 We also filled missing values with 0 since the missing value implies that no cases or deaths were recorded for that group. 
 We ensured the correct data types are being used which is integers in order to perform statistical analysis correctly. 
-We then connected to SQLite Database, and verified that the data is in the database by querying the first 5 rows.
+We then connected to SQLite Database, and verified that the data is in the database by querying the first 5 rows. Using an SQLite database helped make querying for specific race/ethnicity groups more efficient, especially when working with large datasets.
 Because the data is in SQL, we ran a query to aggregate the total cases by race/ethnicity group. We got the total cases in descending order here. 
 Before plotting charts, we make sure we are only working with rows where values are not missing - race/ethnicity and total cases and that the data type is correct. 
 First, we plotted a bar chart of total cases to visualize. We found that NH White has the highest number of total cases. 
@@ -112,7 +112,6 @@ To make a fair comparison across different population sizes of different racial/
 
 This means that now we have two bar charts - one that shows the total number of cases by race/ethnicity and another showing the case rate per 100,000 people. This makes it easier to compare the impact. 
 
-
 Total cases bar chart: larger groups such as NH White have more cases around 77 million simply because their population is larger 
 
 Case rates per 100,000 people chart: we are normalizing the data here and notice that case rate is diferrent with Hispanic group having the highest case rates. 
@@ -120,7 +119,6 @@ Case rates per 100,000 people chart: we are normalizing the data here and notice
 The raw number of COVID-19 cases differs significantly across racial and ethnic groups, with larger population groups generally having more total cases. 
 However, this raw number alone does not provide a clear picture of the impact on each group due to differences in population size. 
 we can see that while some groups had higher total case numbers, when adjusted for population size, other groups were more severely impacted by the pandemic in terms of the proportion of their population that was infected
-
 We additionally created a scatter plot between the total cases and total deaths to visually represent the relationship between both variables. 
 
 Lastly, to answer our question we did a correlation analysis to see if there is a relationship between case rates and deaths. The correlation between case_rates_per_100k to total deaths is 0.076 indicating a weak positive correlation suggesting that there is little to no linear relationship between these two. The number of cases does not predict the total number of deaths suggesting other factors (healthcare access, demographics) may play a larger role in determining death rates.
