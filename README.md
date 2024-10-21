@@ -121,8 +121,16 @@ However, this raw number alone does not provide a clear picture of the impact on
 we can see that while some groups had higher total case numbers, when adjusted for population size, other groups were more severely impacted by the pandemic in terms of the proportion of their population that was infected
 We additionally created a scatter plot between the total cases and total deaths to visually represent the relationship between both variables. 
 
-Lastly, to answer our question we did a correlation analysis to see if there is a relationship between case rates and deaths. The correlation between case_rates_per_100k to total deaths is 0.076 indicating a weak positive correlation suggesting that there is little to no linear relationship between these two. The number of cases does not predict the total number of deaths suggesting other factors (healthcare access, demographics) may play a larger role in determining death rates.
+Lastly, to answer our question we did a correlation analysis to see if there is a relationship between case rates and deaths.
 
-However, when doing the correlation between the total cases and total death we get a value of 0.714 indicating a strong positive correlation. This means as the number of cases increases, the total number of deaths also tends to increase. Other factors like healthcase access, age distrbution, pre-existing conditions play a role which explains why the correlation is not perfect.
+The correlation between case_rates_per_100k to total deaths is 0.076 indicating a weak positive correlation suggesting that there is little to no linear relationship between these two. The number of cases does not predict the total number of deaths suggesting other factors (healthcare access, demographics) may play a larger role in determining death rates. 
+
+However, when doing the correlation between the total cases and total death we get a value of 0.714 indicating a strong positive correlation. This means as the number of cases increases, the total number of deaths also tends to increase. Other factors like healthcase access, age distrbution, pre-existing conditions play a role which explains why the correlation is not perfect. This is expected and reflects the direct relationship between infections and fatalities.
+
+This difference between the two correlations highlights the complexity of COVID-19 outcomes. While high case numbers generally lead to more deaths, other factors beyond infection rates, especially in vulnerable groups, seem to contribute heavily to mortality risk. This emphasizes the importance of considering socio-economic conditions, healthcare infrastructure, and public health interventions when addressing the pandemic's impacts on different communities.
 
 We conclude that there is a clear relationship between racial and ethnic groups and the number of COVID-19 cases. Some groups were disproportionately affected when adjusting for population size, experiencing higher case rates per 100,000 people. However, the severity of the impact in terms of deaths is influenced by more than just the case numbers or infection rates—other socioeconomic and health factors likely contribute to the disparities in outcomes.
+
+
+
+
